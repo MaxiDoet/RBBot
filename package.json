@@ -1,0 +1,19 @@
+{
+  "name": "rbbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheHeroCraft1579/RBBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheHeroCraft1579/RBBot/issues"
+  },
+  "homepage": "https://github.com/TheHeroCraft1579/RBBot#readme"
+}
