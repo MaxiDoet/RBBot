@@ -2,9 +2,9 @@
   "name": "rbbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/TheHeroCraft1579/RBBot/issues"
   },
-  "homepage": "https://github.com/TheHeroCraft1579/RBBot#readme"
+  "homepage": "https://github.com/TheHeroCraft1579/RBBot#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "sync-request": "^6.1.0"
+  }
 }
