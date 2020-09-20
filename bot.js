@@ -5,7 +5,7 @@ const config = require("./config.json");
 
 const movie = require('./handlers/movie.js');
 const help = require('./handlers/help.js')
-const joke = require('./handlers/joke.js')
+const music = require('./handlers/music.js')
 
 client.on("ready", () => {
   console.log(`Ready`); 
@@ -13,23 +13,26 @@ client.on("ready", () => {
 });
 
 client.on("message", async message => {
-  command = message.content.split(' ')[0]
-  args = message.content.replace(command, '').split(' ')
-  argsText = message.content.replace(command, '')
+  const args = message.content.slice(("!").length).trim().split(/ +/);
+  const command = args.shift().toLowerCase();
+  
+  console.log("Message: \nCommand:", command, " \nArgs: ", args);
   
   //console.log(message)
   // Register Command Handlers
-  if (command === "!movie") {
+  if (command === "movie") {
     movie.handle(message, argsText, config.imdb_key);
   }
-  if (command === "!help") {
+  if (command === "help") {
     help.handle(message);
   }
-  if (command === "!joke") {
-    joke.handle(message);
+  if (command === "play") {
+	client.channels.fetch(config.music_channel)
+		.then(channel => music.handlePlay(message, channel, args[0]));
   }
 });
 
-client.login(config.token);
+let token = config.token
+client.login(token);
 
   
